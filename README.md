@@ -33,3 +33,6 @@ Connected to: mongodb://localhost:27017/ccapdev-ajax
 ```
 http://localhost:9090/
 ```
+
+Your web browser should display the screen below:
+![alt text](https://github.com/arvention/ccapdev-ajax/blob/master/index.png "Index Page")
