@@ -120,6 +120,6 @@ getCheckID: function (req, res) {
 }
 ```
 
-As previously discussed, the values passed using the HTTP GET method is retrieved through the `req.query` object. The `getCheckID()` function uses the function `findOne()` of the file [`models\db.js`](https://github.com/arvention/ccapdev-ajax/blob/master/models/db.js) to check if the ID number has been previously registered with another user. If the ID number exists in the database, it will return it back to the caller, otherwise it will return an empty string.
+As previously discussed, the values passed using the HTTP GET method are retrieved through the `req.query` object. The `getCheckID()` function uses the function `findOne()` of the file [`models\db.js`](https://github.com/arvention/ccapdev-ajax/blob/master/models/db.js) to check if the ID number has been previously registered with another user. If the ID number exists in the database, it will return it back to the caller, otherwise it will return an empty string.
 
 10. Read the rest of the documentation in the `README.md` files in each folder and in the in-line comments in each file. Try registering various users with the same ID number and check if the web application will detect that the ID number has been used by another user :sunglasses:
