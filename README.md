@@ -36,3 +36,18 @@ http://localhost:9090/
 
 Your web browser should display the screen below:
 ![alt text](https://github.com/arvention/ccapdev-ajax/blob/master/index.png "Index Page")
+
+7. Go to the sign-up page either using the menu item or the button. Enter sample user details. In this web application, we will use the ID number as a key - thus it should be unique for each user. Copy the sample user details below.
+
+The picture below displays a properly filled form:
+![alt text](https://github.com/arvention/ccapdev-ajax/blob/master/signup.png "Sign-up Page")
+
+8. The web application should display the success screen. This screen displays a welcome message - displaying the first name, the last name, and a link to the profile of the registered user.
+
+The picture below displays the success screen for the details that we have entered earlier:
+![alt text](https://github.com/arvention/ccapdev-ajax/blob/master/success.png "Success Page")
+
+If you have entered the same sample details, the URL displayed by your web browser should be:
+```
+http://localhost:9090/success?fName=Ned&lName=Stark&idNum=11312345
+```
