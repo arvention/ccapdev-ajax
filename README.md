@@ -52,7 +52,7 @@ If you have entered the same sample details, the URL displayed by your web brows
 http://localhost:9090/success?fName=Ned&lName=Stark&idNum=11312345
 ```
 
-9. Go to the sign-up page again either using the menu item or the button, and try to register another user with the same ID Number. Upon entering the same ID number, the ID Number field will turn red, the submit button will be disabled, and an error message saying the "ID number already registered" will be displayed. Deleting the last number or entering another number in the field restores the HTML elements back to its previous state.
+9. Go to the sign-up page again either using the menu item or the button, and try to register another user with the same ID number. Upon entering the same ID number, the ID number field will turn red, the submit button will be disabled, and an error message saying the "ID number already registered" will be displayed. Deleting the last number or entering another number in the field restores the HTML elements back to its previous state.
 
 The picture below displays the state of the sign-up page when a user enters a previously registered ID number:
 ![alt text](https://github.com/arvention/ccapdev-ajax/blob/master/signup-ajax.png "Sign-up Page Duplicate ID Number")
