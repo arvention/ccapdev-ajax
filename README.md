@@ -61,7 +61,7 @@ The web application does this asynchronously, communicating with the server and 
 
 We will discuss each line of code which defines this behavior.
 
-Review the file [`views\signup.hbs`](https://github.com/arvention/ccapdev-ajax/blob/master/views/signup.hbs), focus on the `<form>` element, and take note of its elements and their attributes. Shown below is the `<form>` as excerpted from the file:
+Review the file [`views/signup.hbs`](https://github.com/arvention/ccapdev-ajax/blob/master/views/signup.hbs), focus on the `<form>` element, and take note of its elements and their attributes. Shown below is the `<form>` as excerpted from the file:
 
 ```
 <form id="signup" method="post">
@@ -73,7 +73,7 @@ Review the file [`views\signup.hbs`](https://github.com/arvention/ccapdev-ajax/b
 </form>
 ```
 
-The client-side script [`public\js\signup.js`](https://github.com/arvention/ccapdev-ajax/blob/master/public/js/signup.js) is attached to [`views\signup.hbs`](https://github.com/arvention/ccapdev-ajax/blob/master/views/signup.hbs). This script contains lines of code which attaches a `keyup()` event to the `<input>` element where `id` is equal to `idNum`, i.e. the field which accepts the ID number of the user. Shown below is the code as excerpted from the file:
+The client-side script [`public/js/signup.js`](https://github.com/arvention/ccapdev-ajax/blob/master/public/js/signup.js) is attached to [`views/signup.hbs`](https://github.com/arvention/ccapdev-ajax/blob/master/views/signup.hbs). This script contains lines of code which attaches a `keyup()` event to the `<input>` element where `id` is equal to `idNum`, i.e. the field which accepts the ID number of the user. Shown below is the code as excerpted from the file:
 
 ```
 $('#idNum').keyup(function () {
@@ -101,13 +101,13 @@ In this file, we have defined that each time a user enters a character in the `<
 
 We send the current ID number entered by the user in the `<input>` field to the server as argument to the second parameter of the AJAX method `$.get()`. The server will reply with the same ID number if the ID number exists in the database - thus prompting the form to change its apperance, disable the submit button, and display an error message. If the ID number is not yet registered in the database, then the server will just return an empty string - restoring the form to previous state.
 
-Upon sending the HTTP GET request with the path `/getCheckID`, the server will try to match this path to the paths defined in [`routes\routes.js`](https://github.com/arvention/ccapdev-ajax/blob/master/routes/routes.js). Shown below is a line as excerpted from the file:
+Upon sending the HTTP GET request with the path `/getCheckID`, the server will try to match this path to the paths defined in [`routes/routes.js`](https://github.com/arvention/ccapdev-ajax/blob/master/routes/routes.js). Shown below is a line as excerpted from the file:
 
 ```
 app.get('/getCheckID', signupController.getCheckID);
 ```
 
-When the server receives an HTTP GET request for the path `/getCheckID`, it executes the function `getCheckID()`. Check the file [`controllers\signUpController.js`](https://github.com/arvention/ccapdev-ajax/blob/master/controllers/signUpController.js) and focus on the function `getCheckID()`. Shown below is the function as excerpted from the file:
+When the server receives an HTTP GET request for the path `/getCheckID`, it executes the function `getCheckID()`. Check the file [`controllers/signUpController.js`](https://github.com/arvention/ccapdev-ajax/blob/master/controllers/signUpController.js) and focus on the function `getCheckID()`. Shown below is the function as excerpted from the file:
 
 ```
 getCheckID: function (req, res) {
@@ -120,6 +120,6 @@ getCheckID: function (req, res) {
 }
 ```
 
-As previously discussed, the values passed using the HTTP GET method are retrieved through the `req.query` object. The `getCheckID()` function uses the function `findOne()` of the file [`models\db.js`](https://github.com/arvention/ccapdev-ajax/blob/master/models/db.js) to check if the ID number has been previously registered with another user. If the ID number exists in the database, it will return it back to the caller, otherwise it will return an empty string.
+As previously discussed, the values passed using the HTTP GET method are retrieved through the `req.query` object. The `getCheckID()` function uses the function `findOne()` of the file [`models/db.js`](https://github.com/arvention/ccapdev-ajax/blob/master/models/db.js) to check if the ID number has been previously registered with another user. If the ID number exists in the database, it will return it back to the caller, otherwise it will return an empty string.
 
 10. Read the rest of the documentation in the `README.md` files in each folder and in the in-line comments in each file. Try registering various users with the same ID number and check if the web application will detect that the ID number has been used by another user :sunglasses:
