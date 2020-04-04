@@ -25,7 +25,7 @@ $(document).ready(function () {
         $.get('/getCheckID', {idNum: idNum}, function (result) {
 
             /*
-                if the current value of idNum exists in the database
+                if the current value of `idNum` exists in the database
                 change the background-color of the `<input>` element to red
                 display an error message
                 and disable the submit button
