@@ -110,13 +110,12 @@ app.get('/getCheckID', signupController.getCheckID);
 When the server receives an HTTP GET request for the path `/getCheckID`, it executes the function `getCheckID()`. Check the file [`controllers/signUpController.js`](https://github.com/arvention/ccapdev-ajax/blob/master/controllers/signUpController.js) and focus on the function `getCheckID()`. Shown below is the function as excerpted from the file:
 
 ```
-getCheckID: function (req, res) {
+getCheckID: async function (req, res) {
 
     var idNum = req.query.idNum;
 
-    db.findOne(User, {idNum: idNum}, 'idNum', function (result) {
-        res.send(result);
-    });
+    var result = await db.findOne(User, {idNum: idNum}, 'idNum');
+    res.send(result);
 }
 ```
 
